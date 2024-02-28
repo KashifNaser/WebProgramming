@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:rgb(26, 26, 217);">
+
+
+<form style="margin:auto; width:230px; padding:15px;">
+  <label for="Use" style="color:white;">Username</label><br><br>
+  <input type="Text" id="Username" name="Username" required><br><br>
+  
+  <label for="Password" style="color:white;">Password</label><br><br>
+  <input type="Password" id="password" name="password" required><br<br>>
+
+  <label for="birthdate" style="color:white;">birthdate</label><br><br>
+  <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+  <label for="Email" style="color:white;">Email id</label><br><br>
+  <input type="email" id="email" name="email" required><br><br>
+ 
+  <label for="phoneNumber" style="color:white;">Phone Number</label><br><br>
+  <input type="Text" id="number" name="phoneNumber" required><br><br>
+
+ 
+ <label for="gender" style="color:white;">gender</label><br><br>
+  <input type="gender" id="gender" name="gender" required><br><br>
+ 
+
+  <label for="zipCode" style="color:white;">zipCode</label><br><br>
+  <input type="Text" id="zipCode" name="zipCode" required><br><br>
+
+  <label for="Country" style="color:white;">Country</label><br><br>
+  <input type="Text" id="Country" name="Country" required><br><br>
+
+  <input type="Submit" value="Register" style="background-color:rgb(67, 3, 3); color:white;">
+</form>
+<script>
+    function validateForm(){
+        var username=document.getElementById("Username").value;
+        var password=document.getElementById("password").value;
+        var birthdate=document.getElementById("birthdate").value;
+        var email=document.getElementById("email").value;
+        var phoneNumber=document.getElementById("number").value;
+        var gender=document.getElementById("gender").value;
+        var zipCode=document.getElementById("zipCode").value;
+        var country=document.getElementById("country").value
+
+
+        if(username===""|| password===""|| birthdate==="" || email===""|| phoneNumber===""|| gender===""||zipCode===""|| country==="")
+        {
+        alert("ALL fields must be filled");
+        return false;
+        }
+        if(password.length<9)
+        {
+            alert("Password must be greater or equal to 9")
+
+        }
+    }
+</script>
+</body>
+</html>
