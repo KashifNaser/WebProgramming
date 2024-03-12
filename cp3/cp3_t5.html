@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Children Multiplication Table Generator</h1>
+    <p>Enter a number to get its multiplication table:</p>
+    <input type="number" id="numberInput">
+    <button onclick="generateTable()">Generate Table</button>
+    <div id="output"></div>
+
+
+    <script>
+        function generateTable() {
+            const number = parseInt(document.getElementById("numberInput").value);
+            const outputDiv = document.getElementById("output");
+
+
+        
+            outputDiv.innerHTML = '';
+
+
+            if (!isNaN(number)) {
+                outputDiv.innerHTML += `<h2>Children Multiplication table for ${number}:</h2>`;
+                
+             
+                for (let i = 1; i <= 10; i++) {
+                    outputDiv.innerHTML += `${number} * ${i} = ${number * i}<br>`;
+                }
+            } else {
+                outputDiv.innerHTML = "Invalid input. Please enter a valid number.";
+            }
+        }
+    </script>
+</body>
+</html>

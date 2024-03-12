@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Month Days Scheduler</title>
+</head>
+<body>
+
+
+<h2>Month Days Scheduler</h2>
+
+
+<script>
+function fetchDays() {
+  var userInputMonth = window.prompt("Enter full name of the month (e.g., January, Feburary):");
+  var daysInMonth;
+
+
+  switch (userInputMonth ? userInputMonth.toLowerCase() : null) {
+    case 'january':
+    case 'march':
+    case 'may':
+    case 'july':
+    case 'august':
+    case 'october':
+    case 'december':
+      daysInMonth = 31;
+      break;
+    case 'april':
+    case 'june':
+    case 'september':
+    case 'november':
+      daysInMonth = 30;
+      break;
+    case 'feburary':
+      daysInMonth = "28 or 29"; 
+      break;
+    default:
+      daysInMonth = "!!!!!!Invalid month name!!!!!!!";
+  }
+
+
+  var resultDisplay = document.getElementById("result");
+  if (typeof daysInMonth === 'number') {
+    resultDisplay.innerHTML = "Total number of days in " + userInputMonth + ": <span style='color:red;'>" + daysInMonth + "</span>";
+  } else {
+    resultDisplay.innerHTML = daysInMonth;
+  }
+}
+</script>
+
+
+<button onclick="fetchDays()">Get Days</button>
+<div id="result"></div>
+
+
+</body>
+</html>

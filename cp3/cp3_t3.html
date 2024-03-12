@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body>
+
+
+  <form id="calculatorForm">
+    <label for="n1">Enter Number 1:</label>
+    <input type="Number" id="n1" required>
+    <br>
+    <label for="n2">Enter Number 2:</label>
+    <input type="Number" id="n2" required>
+    <br>
+    <button type="button" onclick="calculate()">Calculate</button>
+  </form>
+
+
+  <h3>Results:</h3>
+  <p id="additionResult">Addition: </p>
+  <p id="subtractionResult">Subtraction: </p>
+  <p id="multiplyingResult">Multiplication: </p>
+  <p id="dividingResult">Division: </p>
+
+
+  <script>
+    function calculate() {
+     
+      var n1 = parseFloat(document.getElementById('n1').value);
+      var n2 = parseFloat(document.getElementById('n2').value);
+
+
+      
+      if (isNaN(n1) || isNaN(n2)) {
+        alert("!!!!!WRONG INPUT!!!!!.");
+        return;
+      }
+
+
+      
+      var additionResult = n1 + n2;
+      var subtractingResult = n1 - n2;
+      var multiplyingResult = n1 * n2;
+      var dividingResult = n1 / n2;
+
+
+      
+      document.getElementById('addingResult').innerText = "Addition of two numbers: " + additionResult;
+      document.getElementById('subtractingResult').innerText = "Subtraction of two numbers: " + subtractionResult;
+      document.getElementById('multiplyingResult').innerText = "Multiplication of two numbers: " + multiplyingResult;
+      document.getElementById('dividingResult').innerText = "Division of two numbers: " + dividingResult;
+    }
+  </script>
+
+
+</body>
+</html>
