@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Class and ID</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+    body{
+        text-align: center;
+        margin-top: 276px;
+    }
+  .sample-class {
+    color: rgb(215, 14, 61);
+    cursor: pointer; 
+  }
+</style>
+</head>
+<body>
+
+<div id="element1" class="sample-class">Element 1</div>
+<div id="element2" class="sample-class">Element 2</div>
+<div id="element3" class="sample-class">Element 3</div>
+
+<script>
+  $(document).ready(function(){
+    $(".sample-class").click(function(){
+      var clickedId = $(this).attr('id');
+      var clickedClass = $(this).attr('class');
+      alert("Clicked element ID: " + clickedId + "\nClicked element Class: " + clickedClass);
+    });
+  });
+</script>
+
+</body>
+</html>

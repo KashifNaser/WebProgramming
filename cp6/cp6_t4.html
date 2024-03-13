@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove Table Row</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ 
+ body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0; 
+ }
+#table-container {
+  width: 80%;
+  margin-top: 50px;
+
+}
+  .removeBtn {
+    padding: 13px 20px;
+    border-radius: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="table-container">
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roll no</th>
+        <th>choice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kashif Naseer </td>
+        <td>21F-9306</td>
+        <td><button class="removeBtn">Remove</button></td>
+      </tr>
+      <tr>
+        <td>Rana Anas</td>
+        <td>21F-9338</td>
+        <td><button class="removeBtn">Remove</button></td>
+      </tr>
+      <tr>
+        <td>Jawad</td>
+        <td>21F-9343</td>
+        <td><button class="removeBtn">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $(".removeBtn").click(function(){
+      $(this).closest('tr').remove();
+    });
+  });
+</script>
+
+</body>
+</html>
