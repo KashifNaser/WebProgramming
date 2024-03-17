@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="ktk-production">
+  <title>DIGITAL CLOCK</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url(./black\ img.jpg);
+      background-size: cover;
+    }
+
+    .clock {
+
+      display: flex;
+      font-family: Arial, sans-serif;
+      font-size: 3rem;
+      color: #333;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .min {
+      margin: 0 5px;
+      padding: 10px;
+      border-radius: 30px;
+      background-color: blue;
+    }
+
+    .hour {
+      margin: 0 5px;
+      padding: 10px;
+      border-radius: 30px;
+      background-color: orange;
+      text-decoration: dotted;
+    }
+
+    .sec {
+      margin: 0 5px;
+
+      padding: 10px;
+      border-radius: 30px;
+      background-color: rgb(235, 85, 85);
+
+    }
+
+    .per {
+      background-color: rgb(178, 62, 228);
+      color: black;
+      margin: 0 5px;
+      padding: 10px;
+      font-size: 49px;
+      border-radius: 30px;
+    }
+
+
+    .time-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .current{
+      position: absolute;
+      background-color: white;
+      color: grey;
+      top: 200px;
+      left: 430px;
+   
+    }
+  </style>
+</head>
+
+<body>
+  <div class="current">
+<h1>CURRENT TIME ACCORDING TO PAKISTAN</h1>
+
+  </div>
+  <div class="clock">
+    <div class="time-section">
+      <div class="hour">Hr</div>
+
+      <div class="hour" id="hours">00</div>
+    </div>
+    <div class="time-section">
+      <div class="min">Min</div>
+
+      <div class="min" id="minutes">00</div>
+    </div>
+    <div class="time-section">
+      <div class="sec">Sec</div>
+
+      <div class="sec" id="seconds">00</div>
+    </div>
+    <div class="time-section">
+      <div class="per">Period</div>
+      <div class="per" id="period"></div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      function updateTime() {
+        var now = new Date();
+
+        var hours = now.getHours().toString().padStart(2, '0');
+        var minutes = now.getMinutes().toString().padStart(2, '0');
+        var seconds = now.getSeconds().toString().padStart(2, '0');
+        var period = (now.getHours() >= 12) ? "PM" : "AM";
+        hours = (now.getHours() % 12 || 12).toString().padStart(2, '0');
+
+        $('#hours').text(hours);
+        $('#minutes').text(minutes);
+        $('#seconds').text(seconds);
+        $('#period').text(period);
+
+      }
+
+      updateTime();
+      setInterval(updateTime, );
+    });
+  </script>
+</body>
+
+</html>
